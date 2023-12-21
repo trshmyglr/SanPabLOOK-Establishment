@@ -6,6 +6,17 @@
     <string name="reports">Reports</string>
     <string name="bookings">Bookings</string>
     <string name="profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--profile values-->
+    <string name="establishment_name">Casa San Pablo</string>
+    <string name="establishment_bio">Casa San Pablo is within a sprawling family estate where you can reconnect with your loved ones — and yourself — through our unique, creative and cultural experiences. We offer family getaways, relaxing escapes, wedding party venues, team building spaces, celebrations, and creative wellness activities.</string>
+    <string name="host_name">Ngalan ng Host</string>
+
+    <!--profile labels-->
+    <string name="label_establishment">Establishment</string>
+    <string name="label_bio">Bio</string>
+    <string name="label_host">Host</string>
+    <string name="establishment_profile_picture">Establishment Profile Picture</string>
+    <string name="host_profile_picture">Host Profile Picture</string>
+    <string name="label_settings">Settings</string>
 </resources>
