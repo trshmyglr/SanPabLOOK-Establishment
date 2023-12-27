@@ -29,6 +29,7 @@
     <color name="aqua">#74E9D9</color>
     <color name="lightBlue">#D6F2F6</color>
     <color name="lighterBlue">#D4F1F5</color>
+    <color name="createAccBg">#61CDE9F0</color>
 
     <color name="light">#F2F3F5</color>
     <color name="dark">#F2F3F5</color>
