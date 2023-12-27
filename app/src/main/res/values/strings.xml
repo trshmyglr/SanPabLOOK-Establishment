@@ -59,4 +59,50 @@
     <string name="establishmentPassword">establishmentpassword</string>
     <string name="establishmentPhoneNumber">09876543210</string>
     <string name="establishmentEmail">casasanpablo@gmail.com</string>
+ 
+
+    <!--HOME/DASHBOARD -->
+    <string name="overview">Overview</string>
+    <string name="bookingDetails">BOOKING DETAILS</string>
+    <string name="confirmedBooking">Confirmed Booking</string>
+    <string name="pendingBooking">Pending Booking</string>
+    <string name="bookingNo"><u>Booking No.</u></string>
+    <string name="customerName"><u>Customer Name</u></string>
+    <string name="nextWeek">Next Week</string>
+    <string name="pastWeek">Past Week</string>
+    <string name="date"><u>Date</u></string>
+    <string name="sampleDate">12/17-\12/20</string>
+    <string name="acceptBooking">Accept Booking?</string>
+    <!--buttons-->
+    <string name="btnConfirm">Confirm</string>
+    <string name="btnDecline">Decline</string>
+    <string name="btnBackLogin"><u>Back to Login</u></string>
+    <string name="btnCreateAcc">Create Account</string>
+    <!--BOOKING NUMBERS-->
+    <string name="booking0">0</string>
+    <string name="booking1">12-\005</string>
+    <string name="booking2">12-\006</string>
+    <string name="booking3">12-\007</string>
+    <!--CUSTOMER NAME SAMPLES-->
+    <string name="noBooking">No Booking</string>
+    <string name="jakRoberto">Jak Roberto</string>
+    <string name="barbieForteza">Barbie Forteza</string>
+    <string name="davidLicauco">David Licauco</string>
+    <!--NOTIFICATION STATUS-->
+    <string name="statusProcessing">Your registration is being processed.</string>
+    <string name="statusComplete">Registration is complete. You are now verified.</string>
+    <string name="notifDays">Please wait at least 1-\3 business days until the confirmation of your account.</string>
+    <!--CREATE ACCOUNT SECTION-->
+    <string name="txtCreate">Create Account</string>
+    <string name="txtBizName">BUSINESS NAME</string>
+    <string name="editBizName">ENTER BUSINESS NAME</string>
+    <string name="txtBizPermitNo">BUSINESS PERMIT NUMBER</string>
+    <string name="editBizPermitNo"> ENTER BUSINESS PERMIT NUMBER</string>
+    <string name="txtBizEmail">BUSINESS EMAIL</string>
+    <string name="editBizEmail">ENTER BUSINESS EMAIL</string>
+    <string name="txtBizType">TYPE OF BUSINESS</string>
+    <string name="editBizType">ENTER TYPE OF BUSINESS</string>
+    <string name="txtBizAddress">BUSINESS ADDRESS</string>
+    <string name="editBizAddress">ENTER BUSINESS ADDRESS</string>
+
 </resources>

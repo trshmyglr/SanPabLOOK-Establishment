@@ -16,6 +16,15 @@
             android:name=".ProfileSettingsActivity"
             android:exported="false" />
         <activity
+            android:name=".RegistrationCreateAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationProcessActivity"
+            android:exported="false" />
+        <activity
             android:name=".BottomNavBarActivity"
             android:exported="true">
             <intent-filter>
