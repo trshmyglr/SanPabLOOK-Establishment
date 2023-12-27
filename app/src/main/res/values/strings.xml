@@ -1,22 +1,108 @@
 <resources>
-    <string name="app_name">SanPabLOOK-Establishment</string>
+    <string name="appName">San PabLOOK-Establishment</string>
 
-    <!--navigation menu-->
+    <!--Navigation menu-->
     <string name="home">Home</string>
     <string name="reports">Reports</string>
     <string name="bookings">Bookings</string>
     <string name="profile">Profile</string>
 
-    <!--profile values-->
-    <string name="establishment_name">Casa San Pablo</string>
-    <string name="establishment_bio">Casa San Pablo is within a sprawling family estate where you can reconnect with your loved ones — and yourself — through our unique, creative and cultural experiences. We offer family getaways, relaxing escapes, wedding party venues, team building spaces, celebrations, and creative wellness activities.</string>
-    <string name="host_name">Ngalan ng Host</string>
+    <!--Profile page values-->
+    <string name="establishmentName">Casa San Pablo</string>
+    <string name="establishmentBio">Casa San Pablo is within a sprawling family estate where you can reconnect with your loved ones — and yourself — through our unique, creative and cultural experiences. We offer family getaways, relaxing escapes, wedding party venues, team building spaces, celebrations, and creative wellness activities.</string>
+    <string name="hostName">Ngalan ng Host</string>
+    <!--Profile page labels-->
+    <string name="labelEstablishment">Establishment</string>
+    <string name="labelBio">Bio</string>
+    <string name="labelHost">Host</string>
+    <string name="establishmentProfilePicture">Establishment Profile Picture</string>
+    <string name="hostProfilePicture">Host Profile Picture</string>
+    <string name="labelSettings">Settings</string>
 
-    <!--profile labels-->
-    <string name="label_establishment">Establishment</string>
-    <string name="label_bio">Bio</string>
-    <string name="label_host">Host</string>
-    <string name="establishment_profile_picture">Establishment Profile Picture</string>
-    <string name="host_profile_picture">Host Profile Picture</string>
-    <string name="label_settings">Settings</string>
+    <!--Report page values-->
+    <string name="reportDate">December 2023</string>
+    <string name="valueTotalBookings">15</string>
+    <string name="valuePendingBookings">1</string>
+    <string name="valueCancelledBookings">0</string>
+    <string name="valueMostChosenPlan">4 days. 3 nights.</string>
+    <!--Report page labels-->
+    <string name="labelAsOf">as of</string>
+    <string name="labelRevenue">Revenue</string>
+    <string name="labelTotalBookings">Total Bookings</string>
+    <string name="labelPendingBookings">Pending Bookings</string>
+    <string name="labelCancelledBookings">Cancelled Bookings</string>
+    <string name="labelMostChosenPlan">Most Chosen Plan</string>
+
+    <!--Settings page labels-->
+    <string name="descriptionArrowBack">Back</string>
+    <string name="labelLogout">Logout</string>
+    <string name="deleteAccount">Delete account</string>
+    <string name="labelEdit">Edit</string>
+    <string name="labelEstablishmentName">Establishment Name</string>
+    <string name="labelPassword">Password</string>
+    <string name="labelPhoneNumber">Phone number</string>
+    <string name="labelEmail">Email Address</string>
+    <string name="labelSave">Save</string>
+    <string name="labelCancel">Cancel</string>
+    <string name="labelCurrentPassword">Current Password</string>
+    <string name="labelNewPassword">New Password</string>
+    <string name="labelTypeNewPassword">Type your New Password</string>
+    <string name="labelRetypePassword">Re-type New Password</string>
+    <string name="labelRetypeYourPassword">Re-type your New Password</string>
+    <string name="typeDeleteAccount">Re-type \"Delete account\" to confirm.</string>
+    <string name="hintDeleteAccount">Type here</string>
+    <string name="labelConfirm">Confirm</string>
+    <string name="labelEditProfilePic">Edit profile picture</string>
+    <string name="labelTakePhoto">Take a photo</string>
+    <string name="labelChoosePhoto">Choose from gallery</string>
+    <!--Settings page values-->
+    <string name="establishmentPassword">establishmentpassword</string>
+    <string name="establishmentPhoneNumber">09876543210</string>
+    <string name="establishmentEmail">casasanpablo@gmail.com</string>
+ 
+
+    <!--HOME/DASHBOARD -->
+    <string name="overview">Overview</string>
+    <string name="bookingDetails">BOOKING DETAILS</string>
+    <string name="confirmedBooking">Confirmed Booking</string>
+    <string name="pendingBooking">Pending Booking</string>
+    <string name="bookingNo"><u>Booking No.</u></string>
+    <string name="customerName"><u>Customer Name</u></string>
+    <string name="nextWeek">Next Week</string>
+    <string name="pastWeek">Past Week</string>
+    <string name="date"><u>Date</u></string>
+    <string name="sampleDate">12/17-\12/20</string>
+    <string name="acceptBooking">Accept Booking?</string>
+    <!--buttons-->
+    <string name="btnConfirm">Confirm</string>
+    <string name="btnDecline">Decline</string>
+    <string name="btnBackLogin"><u>Back to Login</u></string>
+    <string name="btnCreateAcc">Create Account</string>
+    <!--BOOKING NUMBERS-->
+    <string name="booking0">0</string>
+    <string name="booking1">12-\005</string>
+    <string name="booking2">12-\006</string>
+    <string name="booking3">12-\007</string>
+    <!--CUSTOMER NAME SAMPLES-->
+    <string name="noBooking">No Booking</string>
+    <string name="jakRoberto">Jak Roberto</string>
+    <string name="barbieForteza">Barbie Forteza</string>
+    <string name="davidLicauco">David Licauco</string>
+    <!--NOTIFICATION STATUS-->
+    <string name="statusProcessing">Your registration is being processed.</string>
+    <string name="statusComplete">Registration is complete. You are now verified.</string>
+    <string name="notifDays">Please wait at least 1-\3 business days until the confirmation of your account.</string>
+    <!--CREATE ACCOUNT SECTION-->
+    <string name="txtCreate">Create Account</string>
+    <string name="txtBizName">BUSINESS NAME</string>
+    <string name="editBizName">ENTER BUSINESS NAME</string>
+    <string name="txtBizPermitNo">BUSINESS PERMIT NUMBER</string>
+    <string name="editBizPermitNo"> ENTER BUSINESS PERMIT NUMBER</string>
+    <string name="txtBizEmail">BUSINESS EMAIL</string>
+    <string name="editBizEmail">ENTER BUSINESS EMAIL</string>
+    <string name="txtBizType">TYPE OF BUSINESS</string>
+    <string name="editBizType">ENTER TYPE OF BUSINESS</string>
+    <string name="txtBizAddress">BUSINESS ADDRESS</string>
+    <string name="editBizAddress">ENTER BUSINESS ADDRESS</string>
+
 </resources>
