@@ -1,15 +1,622 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:background="@color/white"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeDashboard"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="40sp"
-        android:text="@string/home" />
+        tools:context=".HomeFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/txtOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="@string/overview"
+            android:textColor="@color/blueText"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/calendarCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--CALENDAR-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/calendarCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/icConfirmedBooking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOverview">
+
+            <CalendarView
+                android:id="@+id/calendarDashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_calendar"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--icon for confirmed booking-->
+        <ImageView
+            android:id="@+id/icConfirmedBooking"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"
+            android:background="@drawable/ic_confirmed_booking"
+            app:layout_constraintBottom_toTopOf="@+id/bookingDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarCardView"
+            app:layout_constraintVertical_bias="1.0"/>
+        <!--CONFIRMED BOOKING-->
+        <TextView
+            android:id="@+id/txtConfirmedBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/confirmedBooking"
+            android:textColor="@color/blueText"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/bookingDetails"
+            app:layout_constraintEnd_toStartOf="@+id/icPendingBooking"
+            app:layout_constraintStart_toEndOf="@+id/icConfirmedBooking"
+            app:layout_constraintTop_toBottomOf="@+id/calendarCardView"
+            app:layout_constraintVertical_bias="0.444" />
+        <!--icon for pending booking-->
+        <ImageView
+            android:id="@+id/icPendingBooking"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"
+            android:background="@drawable/ic_pending_booking"
+            app:layout_constraintBottom_toTopOf="@+id/bookingDetails"
+            app:layout_constraintStart_toEndOf="@+id/txtConfirmedBooking"
+            app:layout_constraintTop_toBottomOf="@+id/calendarCardView"
+            app:layout_constraintVertical_bias="0.352" />
+        <!--PENDING BOOKING-->
+        <TextView
+            android:id="@+id/txtPendingBooking"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/pendingBooking"
+            android:textColor="@color/blueText"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/bookingDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/icPendingBooking"
+            app:layout_constraintTop_toBottomOf="@+id/calendarCardView"
+            app:layout_constraintVertical_bias="0.791" />
+        <!--BOOKING DETAILS-->
+        <TextView
+            android:id="@+id/bookingDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/spacer_dashboard"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="10sp"
+            android:text="@string/bookingDetails"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtConfirmedBookingDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icConfirmedBooking" />
+
+        <!--CONFIRMED BOOKING DETAILS-->
+        <TextView
+            android:id="@+id/txtConfirmedBookingDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/confirmedBooking"
+            android:textColor="@color/blueText"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookingDetails"
+            app:layout_constraintBottom_toTopOf="@+id/spacer1" />
+
+        <!--SPACER-->
+        <View
+            android:id="@+id/spacer1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/skyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmedBookingDetails"/>
+
+        <!--BOOKING NO-->
+        <TextView
+            android:id="@+id/txtConfirmedBookingNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/bookingNo"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtConfirmedBookingCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spacer1" />
+        <!--CUSTOMER NAME-->
+        <TextView
+            android:id="@+id/txtConfirmedBookingCustomerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/customerName"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtConfirmedBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/spacer1" />
+
+        <TextView
+            android:id="@+id/txtBooking1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/booking1"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtConfirmedBookingCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmedBookingNo" />
+
+        <TextView
+            android:id="@+id/txtCustomerName1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/jakRoberto"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtConfirmedBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmedBookingCustomerName" />
+
+        <TextView
+            android:id="@+id/txtBooking2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/booking2"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtConfirmedBookingCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBooking1" />
+
+        <TextView
+            android:id="@+id/txtCustomerName2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/barbieForteza"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtConfirmedBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/txtCustomerName1" />
+
+        <!--NEXT WEEK DETAILS-->
+        <TextView
+            android:id="@+id/txtNextWeekDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/nextWeek"
+            android:textColor="@color/blueText"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBooking2"
+            app:layout_constraintBottom_toTopOf="@+id/spacer2" />
+
+        <!--SPACER-->
+        <View
+            android:id="@+id/spacer2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/skyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNextWeekDetails"/>
+
+        <!--BOOKING NOs.-->
+        <TextView
+            android:id="@+id/txtNextWeekBookingNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/bookingNo"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtNextWeekBookingCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spacer2" />
+        <!--CUSTOMER NAMEs-->
+        <TextView
+            android:id="@+id/txtNextWeekBookingCustomerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/customerName"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtNextWeekBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/spacer2" />
+
+        <TextView
+            android:id="@+id/txtBooking3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/booking3"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtCustomerName3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNextWeekBookingNo" />
+
+        <TextView
+            android:id="@+id/txtCustomerName3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/davidLicauco"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtConfirmedBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/txtNextWeekBookingCustomerName" />
+
+        <!--PAST WEEK DETAILS-->
+        <TextView
+            android:id="@+id/txtPastWeekDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/pastWeek"
+            android:textColor="@color/blueText"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBooking3"
+            app:layout_constraintBottom_toTopOf="@+id/spacer3" />
+
+        <!--SPACER-->
+        <View
+            android:id="@+id/spacer3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/skyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPastWeekDetails"/>
+
+        <!--BOOKING NOs.-->
+        <TextView
+            android:id="@+id/txtPastWeekBookingNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/bookingNo"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtPastWeekBookingCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spacer3" />
+        <!--CUSTOMER NAMEs-->
+        <TextView
+            android:id="@+id/txtPastWeekBookingCustomerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/customerName"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtPastWeekBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/spacer3" />
+
+        <TextView
+            android:id="@+id/txtBooking0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/booking0"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/pendingBookingDetails"
+            app:layout_constraintEnd_toStartOf="@+id/txtNoCustomer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPastWeekBookingNo" />
+
+        <TextView
+            android:id="@+id/txtNoCustomer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/noBooking"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtBooking0"
+            app:layout_constraintTop_toBottomOf="@+id/txtPastWeekBookingCustomerName" />
+
+        <!--PENDING BOOKING DETAILS-->
+        <TextView
+            android:id="@+id/pendingBookingDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/spacer_dashboard"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="10sp"
+            android:text="@string/pendingBooking"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtPendingBookingNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBooking0"/>
+
+        <!--BOOKING NOs.-->
+        <TextView
+            android:id="@+id/txtPendingBookingNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/bookingNo"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtPendingBookingCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pendingBookingDetails" />
+        <!--CUSTOMER NAME-->
+        <TextView
+            android:id="@+id/txtPendingBookingCustomerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/customerName"
+            android:textAlignment="textStart"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtDate"
+            app:layout_constraintStart_toEndOf="@+id/txtPendingBookingNo"
+            app:layout_constraintTop_toBottomOf="@+id/pendingBookingDetails" />
+        <!--DATE-->
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/date"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blueText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtPendingBookingCustomerName"
+            app:layout_constraintTop_toBottomOf="@+id/pendingBookingDetails" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPendingBookingNo">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_pending_booking">
+
+                <TextView
+                    android:id="@+id/txtPendingBooking1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/booking3"
+                    android:textColor="@color/blueText"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtPendingCustomerName1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/davidLicauco"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/blueText"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtSampleDate"
+                    app:layout_constraintStart_toEndOf="@+id/txtPendingBooking1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtSampleDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/sampleDate"
+                    android:textAlignment="center"
+                    android:textColor="@color/blueText"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txtPendingCustomerName1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/acceptBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/acceptBooking"
+                    android:textAlignment="center"
+                    android:textColor="@color/blueText"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPendingCustomerName1" />
+
+                <Button
+                    android:id="@+id/btnDecline"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/darkerRed"
+                    android:fontFamily="@font/poppins_bold"
+                    android:letterSpacing="0"
+                    android:padding="8dp"
+                    android:text="@string/btnDecline"
+                    android:textAllCaps="false"
+                    android:textColor="@color/light"
+                    android:textSize="14sp"
+                    app:cornerRadius="50dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/acceptBooking"
+                    app:rippleColor="@color/light" />
+
+                <Button
+                    android:id="@+id/btnAccept"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/blueGreenLighter"
+                    android:fontFamily="@font/poppins_bold"
+                    android:letterSpacing="0"
+                    android:padding="8dp"
+                    android:text="@string/btnConfirm"
+                    android:textAllCaps="false"
+                    android:textColor="@color/light"
+                    android:textSize="14sp"
+                    app:cornerRadius="50dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnDecline"
+                    app:layout_constraintTop_toBottomOf="@+id/acceptBooking"
+                    app:rippleColor="@color/light" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>
