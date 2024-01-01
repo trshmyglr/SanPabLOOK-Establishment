@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activityRegisterAccount"
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -51,7 +52,7 @@
                 android:layout_width="60dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="28dp"
-                android:background="@drawable/round_back_btn_background"
+                android:background="@drawable/round_btn"
                 app:tint="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.045"
@@ -139,7 +140,7 @@
                     android:background="@drawable/fill_rounded_background"
                     android:ems="10"
                     android:hint="Enter your Last Name"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:padding="16dp"
                     android:textColor="@color/onyx"
                     android:textSize="16sp" />
@@ -185,6 +186,7 @@
                     android:background="@drawable/fill_rounded_background"
                     android:ems="10"
                     android:inputType="text"
+                    android:hint="XXXX-XXX-XXXX"
                     android:padding="16dp"
                     android:textColor="@color/onyx"
                     android:textSize="16sp" />

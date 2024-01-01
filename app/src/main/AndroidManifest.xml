@@ -13,6 +13,24 @@
         android:theme="@style/Theme.SanPabLOOKEstablishment"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmailConfirmationSent"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true" />
+        <activity
             android:name=".BottomNavBarActivity"
             android:exported="true">
             <intent-filter>

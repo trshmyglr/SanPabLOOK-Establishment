@@ -59,7 +59,7 @@
     <string name="establishmentPassword">establishmentpassword</string>
     <string name="establishmentPhoneNumber">09876543210</string>
     <string name="establishmentEmail">casasanpablo@gmail.com</string>
- 
+
 
     <!--HOME/DASHBOARD -->
     <string name="overview">Overview</string>
@@ -104,5 +104,9 @@
     <string name="editBizType">ENTER TYPE OF BUSINESS</string>
     <string name="txtBizAddress">BUSINESS ADDRESS</string>
     <string name="editBizAddress">ENTER BUSINESS ADDRESS</string>
+
+    <!--Confirm Registration-->
+    <string name="confirmReg">Confirm Registration</string>
+
 
 </resources>
