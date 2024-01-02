@@ -59,7 +59,13 @@
     <string name="establishmentPassword">establishmentpassword</string>
     <string name="establishmentPhoneNumber">09876543210</string>
     <string name="establishmentEmail">casasanpablo@gmail.com</string>
- 
+
+    <!--Bookings / labels or values-->
+    <string name="bookingDate">December 2023</string>
+    <string name="bookingStatus">...</string>
+    <string name="bookingStatusConfirmed">Confirmed</string>
+    <string name="bookingStatusPending">Pending</string>
+    <string name="bookingStatusCompleted">Completed</string>
 
     <!--HOME/DASHBOARD -->
     <string name="overview">Overview</string>
