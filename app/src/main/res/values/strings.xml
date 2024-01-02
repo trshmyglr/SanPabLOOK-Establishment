@@ -7,11 +7,11 @@
     <string name="bookings">Bookings</string>
     <string name="profile">Profile</string>
 
-    <!--Profile / values-->
+    <!--Profile page values-->
     <string name="establishmentName">Casa San Pablo</string>
     <string name="establishmentBio">Casa San Pablo is within a sprawling family estate where you can reconnect with your loved ones — and yourself — through our unique, creative and cultural experiences. We offer family getaways, relaxing escapes, wedding party venues, team building spaces, celebrations, and creative wellness activities.</string>
     <string name="hostName">Ngalan ng Host</string>
-    <!--Profile / labels-->
+    <!--Profile page labels-->
     <string name="labelEstablishment">Establishment</string>
     <string name="labelBio">Bio</string>
     <string name="labelHost">Host</string>
@@ -19,13 +19,13 @@
     <string name="hostProfilePicture">Host Profile Picture</string>
     <string name="labelSettings">Settings</string>
 
-    <!--Report / values-->
+    <!--Report page values-->
     <string name="reportDate">December 2023</string>
     <string name="valueTotalBookings">15</string>
     <string name="valuePendingBookings">1</string>
     <string name="valueCancelledBookings">0</string>
     <string name="valueMostChosenPlan">4 days. 3 nights.</string>
-    <!--Report / labels-->
+    <!--Report page labels-->
     <string name="labelAsOf">as of</string>
     <string name="labelRevenue">Revenue</string>
     <string name="labelTotalBookings">Total Bookings</string>
@@ -33,7 +33,7 @@
     <string name="labelCancelledBookings">Cancelled Bookings</string>
     <string name="labelMostChosenPlan">Most Chosen Plan</string>
 
-    <!--Settings / labels-->
+    <!--Settings page labels-->
     <string name="descriptionArrowBack">Back</string>
     <string name="labelLogout">Logout</string>
     <string name="deleteAccount">Delete account</string>
@@ -55,7 +55,7 @@
     <string name="labelEditProfilePic">Edit profile picture</string>
     <string name="labelTakePhoto">Take a photo</string>
     <string name="labelChoosePhoto">Choose from gallery</string>
-    <!--Settings / values-->
+    <!--Settings page values-->
     <string name="establishmentPassword">establishmentpassword</string>
     <string name="establishmentPhoneNumber">09876543210</string>
     <string name="establishmentEmail">casasanpablo@gmail.com</string>
@@ -66,7 +66,6 @@
     <string name="bookingStatusConfirmed">Confirmed</string>
     <string name="bookingStatusPending">Pending</string>
     <string name="bookingStatusCompleted">Completed</string>
-
 
     <!--HOME/DASHBOARD -->
     <string name="overview">Overview</string>
