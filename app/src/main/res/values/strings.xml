@@ -61,11 +61,25 @@
     <string name="establishmentEmail">casasanpablo@gmail.com</string>
 
     <!--Bookings / labels or values-->
-    <string name="bookingDate">December 2023</string>
+    <string name="bookingDateMonthly">December 2023</string>
     <string name="bookingStatus">...</string>
     <string name="bookingStatusConfirmed">Confirmed</string>
     <string name="bookingStatusPending">Pending</string>
     <string name="bookingStatusCompleted">Completed</string>
+    <!--PENDING-->
+    <string name="labelBookingNumber">Booking No.</string>
+    <string name="labelCustomerName">Customer Name</string>
+    <string name="labelBookingDate">Booking Date</string>
+    <string name="labelBookingTime">Booking Time</string>
+    <string name="labelNoOfGuests">No. of Guests</string>
+    <string name="labelNoOfPets">No. of Pets</string>
+    <string name="pendingEstablishment">Casa San Pablo</string>
+    <string name="pendingBookingNumber">12-005</string>
+    <string name="pendingCustomerName">Phil Nguyen</string>
+    <string name="pendingBookingDate">01-15-24</string>
+    <string name="pendingBookingTime">2:00 PM</string>
+    <string name="pendingNumberOfGuests">5</string>
+    <string name="pendingNumberOfPets">2</string>
 
     <!--HOME/DASHBOARD -->
     <string name="overview">Overview</string>
