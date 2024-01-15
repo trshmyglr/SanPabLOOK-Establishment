@@ -46,6 +46,7 @@
     <string name="labelCancel">Cancel</string>
     <string name="labelCurrentPassword">Current Password</string>
     <string name="labelNewPassword">New Password</string>
+    <string name="labelTypeCurrentPassword">Type your Current Password</string>
     <string name="labelTypeNewPassword">Type your New Password</string>
     <string name="labelRetypePassword">Re-type New Password</string>
     <string name="labelRetypeYourPassword">Re-type your New Password</string>
