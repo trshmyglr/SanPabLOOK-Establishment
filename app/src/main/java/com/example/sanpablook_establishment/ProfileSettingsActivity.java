@@ -174,8 +174,8 @@ public class ProfileSettingsActivity extends AppCompatActivity {
 
         btnSave = dialog.findViewById(R.id.buttonSave);
         Button btnCancel = dialog.findViewById(R.id.buttonCancel);
-        editTextNew = dialog.findViewById(R.id.editTextNew);
-        editTextRetype = dialog.findViewById(R.id.editTextRetype);
+        editTextNew = dialog.findViewById(R.id.editTextNewPassword);
+        editTextRetype = dialog.findViewById(R.id.editTextRetypePassword);
         btnSave.setEnabled(false);
         btnSave.setAlpha(0.5f);  // initial color is opaque
 
