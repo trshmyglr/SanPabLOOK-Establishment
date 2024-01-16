@@ -10,7 +10,7 @@
     <!--Profile page values-->
     <string name="establishmentName">Casa San Pablo</string>
     <string name="establishmentBio">Casa San Pablo is within a sprawling family estate where you can reconnect with your loved ones — and yourself — through our unique, creative and cultural experiences. We offer family getaways, relaxing escapes, wedding party venues, team building spaces, celebrations, and creative wellness activities.</string>
-    <string name="hostName">Ngalan ng Host</string>
+    <string name="hostName">John Doe</string>
     <!--Profile page labels-->
     <string name="labelEstablishment">Establishment</string>
     <string name="labelBio">Bio</string>
@@ -56,6 +56,8 @@
     <string name="labelEditProfilePic">Edit profile picture</string>
     <string name="labelTakePhoto">Take a photo</string>
     <string name="labelChoosePhoto">Choose from gallery</string>
+    <string name="labelHostName">Host Name</string>
+    <string name="labelFeaturedImage">Featured Image</string>
     <!--Settings page values-->
     <string name="establishmentPassword">establishmentpassword</string>
     <string name="establishmentPhoneNumber">09876543210</string>

@@ -73,7 +73,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textLabelEstablishment"
             app:shapeAppearanceOverlay="@style/circular"
-            app:srcCompat="@drawable/establishment_profile_pic"
+            app:srcCompat="@drawable/casaprofile"
             app:strokeColor="@color/skyBlue"
             app:strokeWidth="10dp" />
 
@@ -118,6 +118,25 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textLabelBio" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/featuredImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="4dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textContentBio">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageviewFeaturedImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/rounded"
+                app:srcCompat="@drawable/casasanpabloimg"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/textLabelHost"
             android:layout_width="wrap_content"
@@ -132,7 +151,7 @@
             android:textColor="@color/blueText"
             android:textSize="15sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textContentBio" />
+            app:layout_constraintTop_toBottomOf="@id/featuredImage" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profilePictureHost"
@@ -146,7 +165,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textLabelHost"
             app:shapeAppearanceOverlay="@style/circular"
-            app:srcCompat="@drawable/host_profile_pic"
+            app:srcCompat="@drawable/profile_pic"
             app:strokeColor="@color/skyBlue"
             app:strokeWidth="10dp" />
 
