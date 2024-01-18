@@ -56,9 +56,11 @@
 
     <LinearLayout
         android:id="@+id/containerUsernamePassword"
-        android:layout_width="347dp"
+        android:layout_width="match_parent"
         android:layout_height="185dp"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +111,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:background="@drawable/fill_rounded_background"
                 android:ems="10"
                 android:hint="Enter your password"
