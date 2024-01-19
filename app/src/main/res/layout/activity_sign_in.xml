@@ -59,8 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
             android:hint="Enter your username"
             android:inputType="text"
             android:padding="16dp"
-            android:textColor="@color/onyx"
+            android:textColor="@color/lighterBlack"
             android:textSize="16sp" />
 
         <TextView
@@ -111,13 +111,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/fill_rounded_background"
                 android:ems="10"
                 android:hint="Enter your password"
                 android:inputType="textPassword"
                 android:padding="16dp"
-                android:textColor="@color/onyx"
+                android:textColor="@color/lighterBlack"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
