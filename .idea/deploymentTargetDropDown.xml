@@ -6,7 +6,20 @@
         <State />
       </entry>
       <entry key="try">
-        <State />
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\ALFRED\.android\avd\Pixel_6_API_26.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-01-18T06:00:12.219460900Z" />
+        </State>
       </entry>
     </value>
   </component>
