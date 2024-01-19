@@ -31,12 +31,12 @@ import java.util.regex.Pattern;
 public class ProfileSettingsActivity extends AppCompatActivity {
 
     ImageButton btnBack;
-    TextView txtEstablishmentName, txtPassword, txtBio, txtPhoneNumber, txtEmail;
+    TextView txtEstablishmentName, txtPassword, txtBio, txtPhoneNumber, txtEmail, txtHostName;
     Button buttonLogout, buttonDeleteAccount;
 
-    //for profile picture
-    FloatingActionButton fabEditProfilePicture;
-    ShapeableImageView profilePicture;
+    //IMAGES
+    FloatingActionButton fabEditEstablishmentProfilePicture, fabEditHostProfilePicture, fabEditFeatured;
+    ShapeableImageView editEstablishmentProfilePicture, editHostProfilePicture, editFeatured;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +45,22 @@ public class ProfileSettingsActivity extends AppCompatActivity {
 
         btnBack = findViewById(R.id.buttonBackSettings);
         txtEstablishmentName = findViewById(R.id.editTheEstablishmentName);
+        txtHostName = findViewById(R.id.editTheHostName);
         txtPassword = findViewById(R.id.editThePassword);
         txtBio = findViewById(R.id.editTheBio);
         txtPhoneNumber = findViewById(R.id.editThePhoneNumber);
         txtEmail = findViewById(R.id.editTheEmail);
         buttonLogout = findViewById(R.id.buttonLogout);
         buttonDeleteAccount = findViewById(R.id.buttonDeleteAccount);
-        fabEditProfilePicture = findViewById(R.id.fabEditProfilePicture);
-        profilePicture = findViewById(R.id.profilePicture);
+
+        //IMAGES
+        fabEditEstablishmentProfilePicture = findViewById(R.id.fabEditEstablishmentProfilePicture);
+        editEstablishmentProfilePicture = findViewById(R.id.editEstablishmentProfilePicture);
+        fabEditHostProfilePicture = findViewById(R.id.fabEditHostProfilePicture);
+        editHostProfilePicture = findViewById(R.id.editHostProfilePicture);
+        fabEditFeatured = findViewById(R.id.fabEditFeatured);
+        editFeatured = findViewById(R.id.editFeatured);
+
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +71,13 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         txtEstablishmentName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogEditUsername(view);
+                showDialogEditEstablishmentName(view);
+            }
+        });
+        txtHostName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogEditHostName(view);
             }
         });
         txtPassword.setOnClickListener(new View.OnClickListener() {
@@ -96,30 +110,59 @@ public class ProfileSettingsActivity extends AppCompatActivity {
                 showDialogDeleteAccount(view);
             }
         });
-        fabEditProfilePicture.setOnClickListener(view1 -> {
+
+        //IMAGES
+        fabEditEstablishmentProfilePicture.setOnClickListener(view1 -> {
             ImagePicker.Companion.with(this)
                     .crop()                 // Crop image(Optional), Check Customization for more option
                     .compress(1024)         // Final image size will be less than 1 MB(Optional)
                     .maxResultSize(1080, 1080)   // Final image resolution will be less than 1080 x 1080(Optional)
-                    .start();
+                    .start(1);
+        });
+        fabEditHostProfilePicture.setOnClickListener(view1 -> {
+            ImagePicker.Companion.with(this)
+                    .crop()                 // Crop image(Optional), Check Customization for more option
+                    .compress(1024)         // Final image size will be less than 1 MB(Optional)
+                    .maxResultSize(1080, 1080)   // Final image resolution will be less than 1080 x 1080(Optional)
+                    .start(2);
+        });
+        fabEditFeatured.setOnClickListener(view1 -> {
+            ImagePicker.Companion.with(this)
+                    .crop()                 // Crop image(Optional), Check Customization for more option
+                    .compress(1024)         // Final image size will be less than 1 MB(Optional)
+                    .maxResultSize(1080, 1080)   // Final image resolution will be less than 1080 x 1080(Optional)
+                    .start(3);
         });
     }
 
+    //IMAGES
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Uri uri = data.getData();
-        profilePicture.setImageURI(uri);
+        // Get the image URI
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 1) {
+                Uri imageUri = data.getData();
+                editEstablishmentProfilePicture.setImageURI(imageUri);
+            } else if (requestCode == 2) {
+                Uri imageUri = data.getData();
+                editHostProfilePicture.setImageURI(imageUri);
+            } else if (requestCode == 3) {
+                Uri imageUri = data.getData();
+                editFeatured.setImageURI(imageUri);
+            }
+        }
     }
-    private void showDialogEditUsername (View view) {
+
+    private void showDialogEditEstablishmentName(View view) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_edit_establishment_name);
 
         Button btnSave = dialog.findViewById(R.id.buttonSave);
         Button btnCancel = dialog.findViewById(R.id.buttonCancel);
-        EditText editTextUsername = dialog.findViewById(R.id.editTextUsername);
+        EditText editTextUsername = dialog.findViewById(R.id.editTextEstablishmentName);
 
         btnSave.setEnabled(false);
         btnSave.setAlpha(0.5f);
@@ -142,10 +185,11 @@ public class ProfileSettingsActivity extends AppCompatActivity {
             }
         });
 
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this , "Your username has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Establishment name has been updated", Toast.LENGTH_SHORT);
             }
         });
 
@@ -157,7 +201,59 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    private void showDialogEditHostName(View view) {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_edit_host_name);
+
+        Button btnSave = dialog.findViewById(R.id.buttonSave);
+        Button btnCancel = dialog.findViewById(R.id.buttonCancel);
+        EditText editTextUsername = dialog.findViewById(R.id.editTextHostName);
+
+        btnSave.setEnabled(false);
+        btnSave.setAlpha(0.5f);
+
+        editTextUsername.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Not needed for this case
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btnSave.setEnabled(true);
+                btnSave.setAlpha(1.0f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Not needed for this case
+            }
+        });
+
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ProfileSettingsActivity.this, "Host name has been updated", Toast.LENGTH_SHORT);
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
@@ -167,15 +263,16 @@ public class ProfileSettingsActivity extends AppCompatActivity {
     private EditText editTextNew;
     private EditText editTextRetype;
     private Button btnSave;
-    private void showDialogEditPassword (View view) {
+
+    private void showDialogEditPassword(View view) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_edit_password);
 
         btnSave = dialog.findViewById(R.id.buttonSave);
         Button btnCancel = dialog.findViewById(R.id.buttonCancel);
-        editTextNew = dialog.findViewById(R.id.editTextNew);
-        editTextRetype = dialog.findViewById(R.id.editTextRetype);
+        editTextNew = dialog.findViewById(R.id.editTextNewPassword);
+        editTextRetype = dialog.findViewById(R.id.editTextRetypePassword);
         btnSave.setEnabled(false);
         btnSave.setAlpha(0.5f);  // initial color is opaque
 
@@ -185,7 +282,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this , "Your password has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your password has been updated", Toast.LENGTH_SHORT);
             }
         });
 
@@ -197,11 +294,12 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
+
     private TextWatcher passwordTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -223,7 +321,8 @@ public class ProfileSettingsActivity extends AppCompatActivity {
             // Not needed for this case
         }
     };
-    private void showDialogEditBio (View view) {
+
+    private void showDialogEditBio(View view) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_edit_bio);
@@ -256,7 +355,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this , "Your bio has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your bio has been updated", Toast.LENGTH_SHORT);
             }
         });
 
@@ -268,12 +367,13 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
-    private void showDialogEditPhoneNumber (View view) {
+
+    private void showDialogEditPhoneNumber(View view) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_edit_phone_number);
@@ -296,8 +396,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
                 if (validateMobile(editTextPhoneNumber.getText().toString())) {
                     btnSave.setEnabled(true);
                     btnSave.setAlpha(1.0f);
-                }
-                else {
+                } else {
                     btnSave.setEnabled(false);
                     editTextPhoneNumber.setError("Invalid phone number");
                 }
@@ -312,7 +411,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this , "Your phone number has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your phone number has been updated", Toast.LENGTH_SHORT);
             }
         });
 
@@ -324,12 +423,13 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
-    private void showDialogEditEmail (View view) {
+
+    private void showDialogEditEmail(View view) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_edit_email_address);
@@ -362,7 +462,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this , "Your email has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your email has been updated", Toast.LENGTH_SHORT);
             }
         });
 
@@ -374,12 +474,13 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
-    private void showDialogDeleteAccount (View view) {
+
+    private void showDialogDeleteAccount(View view) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_delete_account);
@@ -416,7 +517,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this , "Your account has been deleted", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your account has been deleted", Toast.LENGTH_SHORT);
             }
         });
 
@@ -428,7 +529,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
