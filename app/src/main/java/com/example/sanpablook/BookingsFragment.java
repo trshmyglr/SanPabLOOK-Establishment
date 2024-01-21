@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.sanpablook.Adapter.RecyclerFragmentBookings;
@@ -19,6 +21,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -41,6 +45,37 @@ public class BookingsFragment extends Fragment {
         //RECYCLER VIEW
         recyclerViewFragmentBookings = view.findViewById(R.id.recyclerViewFragmentBookings);
         recyclerViewFragmentBookings.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        Spinner monthSpinner = view.findViewById(R.id.monthSpinner);
+        Spinner yearSpinner = view.findViewById(R.id.yearSpinner);
+        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        int startingYear = 2010;
+
+        List<String> yearList = new ArrayList<>();
+        List<String> monthList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.monthArray)));
+
+        // Populate the list with years from starting year to current year
+        for (int year = startingYear; year <= currentYear; year++) {
+            yearList.add(String.valueOf(year));
+        }
+
+        //month
+        ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(requireContext(), R.layout.spinner_item_layout, monthList);
+        monthAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        monthSpinner.setAdapter(monthAdapter);
+        monthSpinner.setSelection(currentMonth - 1);
+
+        //year
+        ArrayAdapter<String> yearAdapter = new ArrayAdapter<>(requireContext(), R.layout.spinner_item_layout, yearList);
+        yearAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        yearSpinner.setAdapter(yearAdapter);
+
+        // Set the default selection to the current year
+        int defaultYearIndex = yearList.indexOf(String.valueOf(currentYear));
+        if (defaultYearIndex != -1) {
+            yearSpinner.setSelection(defaultYearIndex);
+        }
 
         return view;
     }
