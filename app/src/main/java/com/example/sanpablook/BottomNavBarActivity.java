@@ -29,7 +29,7 @@ public class BottomNavBarActivity extends AppCompatActivity {
             } else if (itemId == R.id.reports) {
                 replaceFragment(new ReportsFragment());
             } else if (itemId == R.id.bookings) {
-                replaceFragment(new sanpablook.study.sanpablook.BookingsFragment());
+                replaceFragment(new BookingsFragment());
             } else if (itemId == R.id.profile) {
                 replaceFragment(new ProfileFragment());
             }

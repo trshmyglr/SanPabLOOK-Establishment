@@ -34,8 +34,7 @@ public class ConfirmRegistrationActivity extends AppCompatActivity {
         backBtnConfirmReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
-
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
 
