@@ -1,5 +1,17 @@
 
-o
-java:S2293$"YReplace the type specification in this constructor call with the diamond operator ("<>").(ôÍş¤
->
-java:S1185"(Remove this method to simply inherit it.(ßìê¯
+w
+java:S11926"ZDefine a constant instead of duplicating this literal "Error getting documents: " 4 times.(úæÅÙ8·“ôãÒ1
+q
+java:S1192+"ODefine a constant instead of duplicating this literal "BookingPending" 4 times.(œÑşçÿÿÿÿÿ8·“ôãÒ1
+f
+java:S1192,"IDefine a constant instead of duplicating this literal "casaDine" 4 times.(à˜¼8·“ôãÒ1
+d
+java:S1192?"GDefine a constant instead of duplicating this literal "status" 3 times.(üàö’8Ú¦öãÒ1
+m
+java:S1192,"PDefine a constant instead of duplicating this literal "establishmentID" 4 times.(à˜¼8¸“ôãÒ1
+s
+java:S1659"QDeclare "valuePendingBookings" and all following declarations on a separate line.(÷Üÿ£şÿÿÿÿ8Ì™åãÒ1
+E
+java:S1185"(Remove this method to simply inherit it.(ßìê¯8â¡•ãÒ1
+t
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ËÄ•åûÿÿÿÿ8î“ôãÒ1
