@@ -29,3 +29,5 @@ C
 settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850
 n
 >app/src/main/java/com/example/sanpablook/BookingsFragment.java,6\a\6a0e36b716cde123d710a91de24d0cd6eb3f573f
+m
+=app/src/main/java/com/example/sanpablook/ReportsFragment.java,0\1\01cba41370aa6832821d5b73c42a48234c8ea226

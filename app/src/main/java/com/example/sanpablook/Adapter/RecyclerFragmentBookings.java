@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sanpablook_establishment.R;
+import com.google.firebase.Firebase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 import java.util.Map;
@@ -17,8 +19,11 @@ public class RecyclerFragmentBookings extends RecyclerView.Adapter<RecyclerFragm
 
     private List<Map<String, Object>> bookings;
 
+    static FirebaseFirestore db;
+
     public RecyclerFragmentBookings(List<Map<String, Object>> bookings) {
         this.bookings = bookings;
+        db = FirebaseFirestore.getInstance();
     }
 
     @NonNull
@@ -31,12 +36,12 @@ public class RecyclerFragmentBookings extends RecyclerView.Adapter<RecyclerFragm
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
         Map<String, Object> booking = bookings.get(position);
-        holder.bookingStatus.setText(booking.get("place").toString());
+        holder.bookingStatus.setText(booking.get("status").toString());
         holder.valueOfBookingNumber.setText(booking.get("bookingID").toString());
-        holder.valueOfCustomerName.setText(booking.get("bookingID").toString());
-        holder.valueOfBookingDate.setText(booking.get("bookingID").toString());
-        holder.valueOfBookingTime.setText(booking.get("bookingID").toString());
-        holder.valueOfNumberOfGuests.setText(booking.get("bookingID").toString());
+        holder.valueOfCustomerName.setText(booking.get("fullName").toString());
+        holder.valueOfBookingDate.setText(booking.get("date").toString());
+        holder.valueOfBookingTime.setText(booking.get("time").toString());
+        holder.valueOfNumberOfGuests.setText(booking.get("guest").toString());
     }
 
     @Override
