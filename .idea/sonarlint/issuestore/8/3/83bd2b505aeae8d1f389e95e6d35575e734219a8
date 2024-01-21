@@ -1,0 +1,97 @@
+
+=
+java:S1604B"(Make this anonymous inner class a lambda(°æ
+C
+java:S1604H"(Make this anonymous inner class a lambda(ˆ’…Œÿÿÿÿÿ
+>
+java:S1604N"(Make this anonymous inner class a lambda(ù÷ü¥
+=
+java:S1604T"(Make this anonymous inner class a lambda(Ûù°[
+>
+java:S1604Z"(Make this anonymous inner class a lambda(µŠûã
+C
+java:S1604`"(Make this anonymous inner class a lambda(ãî—øúÿÿÿÿ
+C
+java:S1604f"(Make this anonymous inner class a lambda(¤Í¾Ùÿÿÿÿÿ
+C
+java:S1604l"(Make this anonymous inner class a lambda(ÖÿÄ­şÿÿÿÿ
+?
+java:S1604¾"(Make this anonymous inner class a lambda(¡‡·¬
+>
+java:S1604Å"(Make this anonymous inner class a lambda(µ¶é)
+?
+java:S1604ò"(Make this anonymous inner class a lambda(¡‡·¬
+>
+java:S1604ù"(Make this anonymous inner class a lambda(µ¶é)
+?
+java:S1604›"(Make this anonymous inner class a lambda(¡‡·¬
+>
+java:S1604¢"(Make this anonymous inner class a lambda(µ¶é)
+?
+java:S1604ä"(Make this anonymous inner class a lambda(¡‡·¬
+>
+java:S1604ë"(Make this anonymous inner class a lambda(µ¶é)
+?
+java:S1604œ"(Make this anonymous inner class a lambda(¡‡·¬
+>
+java:S1604£"(Make this anonymous inner class a lambda(µ¶é)
+?
+java:S1604Ï"(Make this anonymous inner class a lambda(¡‡·¬
+>
+java:S1604Ö"(Make this anonymous inner class a lambda(µ¶é)
+D
+java:S1604†"(Make this anonymous inner class a lambda(¶àË²úÿÿÿÿ
+>
+java:S1604"(Make this anonymous inner class a lambda(µ¶é)
+^
+java:S2259™"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
+^
+java:S2259“"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
+^
+java:S2259–"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
+c
+java:S1659#"HDeclare "txtPassword" and all following declarations on a separate line.(‚ø‡òıÿÿÿÿ
+L
+java:S1659$"1Declare "buttonDeleteAccount" on a separate line.(Ö¶˜âûÿÿÿÿ
+l
+java:S1659'"VDeclare "fabEditHostProfilePicture" and all following declarations on a separate line.(£¸„œ
+n
+java:S1659("SDeclare "editHostProfilePicture" and all following declarations on a separate line.(è«òøÿÿÿÿ
+B
+java:S1602t",Remove useless curly braces around statement(«İ’È
+G
+java:S1602{",Remove useless curly braces around statement(±ñ¯ıÿÿÿÿ
+C
+java:S1602‚",Remove useless curly braces around statement(·¥Â¥
+`
+java:S1874"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¹Î¾
+B
+java:S1172Ÿ"+Remove this unused method parameter "view".(­Üç°
+R
+java:S1117¤"<Rename "btnSave" which hides the field declared at line 266.(ÕÈÙ^
+B
+java:S1172Ó"+Remove this unused method parameter "view".(ÚÆ–ª
+R
+java:S1117Ø"<Rename "btnSave" which hides the field declared at line 266.(ÕÈÙ^
+B
+java:S1172Œ"+Remove this unused method parameter "view".(¹ë…Û
+G
+java:S1172Æ"+Remove this unused method parameter "view".(û¾ŸÈûÿÿÿÿ
+R
+java:S1117Ë"<Rename "btnSave" which hides the field declared at line 266.(ÕÈÙ^
+G
+java:S1172ù"+Remove this unused method parameter "view".(Ÿ§§¶úÿÿÿÿ
+X
+java:S1117ş"<Rename "btnSave" which hides the field declared at line 266.(Éó‹Òûÿÿÿÿ
+A
+java:S1172±"+Remove this unused method parameter "view".(¡ØÉ9
+R
+java:S1117¶"<Rename "btnSave" which hides the field declared at line 266.(ÕÈÙ^
+G
+java:S1172ä"+Remove this unused method parameter "view".(¹­È³ıÿÿÿÿ
+Q
+java:S6397"5Replace this character class by the character itself.(õ†¿Ïøÿÿÿÿ
+Q
+java:S6397"5Replace this character class by the character itself.(õ†¿Ïøÿÿÿÿ
+X
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(õ†¿Ïøÿÿÿÿ

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/signInActivity"
-    tools:context=".SignInActivity">
+    android:id="@+id/signInActivity">
 
     <ImageView
         android:id="@+id/waveBackground"
@@ -57,7 +56,7 @@
     <LinearLayout
         android:id="@+id/containerUsernamePassword"
         android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -70,18 +69,18 @@
             android:id="@+id/textViewUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="USERNAME"
+            android:text="BUSINESS EMAIL"
             android:textColor="@color/gray"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editTextUserName"
+            android:id="@+id/editTextBusinessEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/fill_rounded_background"
             android:ems="10"
-            android:hint="Enter your username"
+            android:hint="Enter your business email"
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/lighterBlack"

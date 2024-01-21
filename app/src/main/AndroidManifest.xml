@@ -17,22 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SanPabLOOKEstablishment"
         tools:targetApi="31">
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".RegistrationProcessActivity"  />
-        <activity android:name=".ConfirmRegistrationActivity" />
-        <activity android:name=".ProfileSettingsActivity" />
-        <activity android:name=".RegistrationCompleteActivity" />
-        <activity android:name=".RegistrationCreateAccountActivity"/>
-        <activity android:name=".EmailConfirmationSent" />
-        <activity android:name=".SignInActivity" android:exported="true" />
-        <activity android:name=".SignUpActivity" android:exported="true" />
-        <activity android:name=".BottomNavBarActivity" android:exported="true">
+
+        <activity android:name="com.example.sanpablook.ForgotPasswordActivity" />
+        <activity android:name="com.example.sanpablook.RegistrationProcessActivity"  />
+        <activity android:name="com.example.sanpablook.ConfirmRegistrationActivity" />
+        <activity android:name="com.example.sanpablook.ProfileSettingsActivity" />
+        <activity android:name="com.example.sanpablook.RegistrationCompleteActivity" />
+        <activity android:name="com.example.sanpablook.RegistrationCreateAccountActivity"/>
+        <activity android:name="com.example.sanpablook.EmailConfirmationSent" />
+        <activity android:name="com.example.sanpablook.SignUpActivity" android:exported="true" />
+        <activity
+            android:name="com.example.sanpablook.SignInActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.sanpablook.BottomNavBarActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
