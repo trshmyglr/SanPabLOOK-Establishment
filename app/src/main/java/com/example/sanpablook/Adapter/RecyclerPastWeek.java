@@ -24,15 +24,15 @@ public class RecyclerPastWeek extends RecyclerView.Adapter<RecyclerPastWeek.Book
     @NonNull
     @Override
     public BookingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_next_week_booking, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_past_week_booking, parent, false);
         return new BookingViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
         Map<String, Object> booking = bookings.get(position);
-        holder.txtPastWeekBookingNumber.setText(booking.get("place").toString());
-        holder.txtPastWeekCustomerName.setText(booking.get("bookingID").toString());
+        holder.txtPastWeekBookingNumber.setText(booking.get("bookingID").toString());
+        holder.txtPastWeekCustomerName.setText(booking.get("fullName").toString());
     }
 
     @Override
@@ -42,12 +42,12 @@ public class RecyclerPastWeek extends RecyclerView.Adapter<RecyclerPastWeek.Book
 
     static class BookingViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtPastWeekBookingNumber, txtPastWeekCustomerName;
+        TextView txtPastWeekBookingNumber;
+        TextView txtPastWeekCustomerName;
 
         public BookingViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            // Find other TextViews
             txtPastWeekBookingNumber = itemView.findViewById(R.id.txtPastWeekBookingNumber);
             txtPastWeekCustomerName = itemView.findViewById(R.id.txtPastWeekCustomerName);
         }

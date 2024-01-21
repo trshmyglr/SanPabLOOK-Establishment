@@ -1,14 +1,28 @@
 
+w
+java:S1192x"ZDefine a constant instead of duplicating this literal "Error getting documents: " 4 times.(¥ˆÉ’8Ó¥£çÒ1
+q
+java:S1192e"ODefine a constant instead of duplicating this literal "BookingPending" 4 times.(œÑşçÿÿÿÿÿ8Ó¥£çÒ1
+f
+java:S1192g"IDefine a constant instead of duplicating this literal "casaDine" 4 times.(à˜¼8Ó¥£çÒ1
 i
-java:S1192R"MDefine a constant instead of duplicating this literal "HomeFragment" 3 times.(˜Ã’d8×»ÍÜÒ1
-J
-java:S1604["(Make this anonymous inner class a lambda(¯‘àçúÿÿÿÿ8ÜÌËÜÒ1
-J
-java:S1604D"(Make this anonymous inner class a lambda(Á¤Ïşÿÿÿÿ8ÒöèÜÒ1
-J
-java:S1604u"(Make this anonymous inner class a lambda(¯‘àçúÿÿÿÿ8ÒöèÜÒ1
+java:S1192a"MDefine a constant instead of duplicating this literal "HomeFragment" 7 times.(˜Ã’d8Ó¥£çÒ1
 m
-java:S1659)"QDeclare "recyclerViewNextWeek" and all following declarations on a separate line.(Ã„ÏE8ä•ËÜÒ1
+java:S1192g"PDefine a constant instead of duplicating this literal "establishmentID" 4 times.(à˜¼8Ô¥£çÒ1
+J
+java:S1604j"(Make this anonymous inner class a lambda(¯‘àçúÿÿÿÿ8Ô¥£çÒ1
+J
+java:S1604S"(Make this anonymous inner class a lambda(Á¤Ïşÿÿÿÿ8Õ¥£çÒ1
+K
+java:S1604·"(Make this anonymous inner class a lambda(¯‘àçúÿÿÿÿ8Õ¥£çÒ1
+m
+java:S1659*"QDeclare "recyclerViewNextWeek" and all following declarations on a separate line.(Ã„ÏE8ÜµçÒ1
 E
-java:S1185,"(Remove this method to simply inherit it.(ßìê¯8ì•ËÜÒ1
-^	java:S125‰"<This block of commented-out lines of code should be removed.(Æ¶Şıÿÿÿÿ8´ÍËÜÒ1
+java:S1185-"(Remove this method to simply inherit it.(ßìê¯8ëµçÒ1
+t
+java:S37762"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ËÄ•åûÿÿÿÿ8îµçÒ1
+X
+java:S1117d"6Rename "db" which hides the field declared at line 40.(ôï¼ÿúÿÿÿÿ8¥¦£çÒ1
+Y
+java:S1117²"6Rename "db" which hides the field declared at line 40.(ôï¼ÿúÿÿÿÿ8­¦£çÒ1
+^	java:S125Ï"<This block of commented-out lines of code should be removed.(Æ¶Şıÿÿÿÿ8³¦£çÒ1

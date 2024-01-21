@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.example.sanpablook.Adapter.RecyclerPastWeek;
 import com.example.sanpablook.Adapter.RecyclerPending;
 import com.example.sanpablook_establishment.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,8 +37,8 @@ public class HomeFragment extends Fragment {
     CalendarView calendarView;
     Calendar calendar;
 
+    FirebaseFirestore db;
     Button btnAccept;
-
     RecyclerView recyclerViewConfirmed, recyclerViewNextWeek, recyclerViewPastWeek, recyclerViewPending;
 
     @Override
@@ -50,10 +51,24 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        db = FirebaseFirestore.getInstance();
         //CALENDAR VIEW
         calendarView = view.findViewById(R.id.calendarDashboard);
         calendar = Calendar.getInstance();
         calendar.getMinimalDaysInFirstWeek();
+        Calendar oneWeekAgo = Calendar.getInstance();
+        oneWeekAgo.add(Calendar.WEEK_OF_YEAR, -1);
+        Calendar oneWeekAhead = Calendar.getInstance();
+        oneWeekAhead.add(Calendar.WEEK_OF_YEAR, 1);
+
+        //sdf
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd yyyy", Locale.getDefault());
+        String todayDate = sdf.format(calendar.getTime());
+        String oneWeekAgoDate = sdf.format(oneWeekAgo.getTime());
+        String oneWeekAheadDate = sdf.format(oneWeekAhead.getTime());
+
+
 
         //RECYCLER VIEW
         recyclerViewConfirmed = view.findViewById(R.id.recyclerViewConfirmed);
@@ -109,6 +124,57 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Query Date base on next week
+        db.collection("BookingPending")
+                .whereEqualTo("establishmentID", "casaDine")
+                .whereGreaterThanOrEqualTo("date", todayDate)
+                .whereLessThanOrEqualTo("date", oneWeekAheadDate)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Log the size of the bookings list
+                        Log.d("HomeFragment", "Number of documents fetched for oneWeekAhead: " + bookings.size());
+
+                        // Initialize the adapter
+                        RecyclerPastWeek adapter = new RecyclerPastWeek(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewNextWeek.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
+
+        // Query Date base on last week
+        db.collection("BookingPending")
+                .whereEqualTo("establishmentID", "casaDine")
+                .whereLessThanOrEqualTo("date", todayDate)
+                .whereGreaterThanOrEqualTo("date", oneWeekAgoDate)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Log the size of the bookings list
+                        Log.d("HomeFragment", "Number of documents fetched for oneWeekAgo: " + bookings.size());
+
+                        // Initialize the adapter
+                        RecyclerPastWeek adapter = new RecyclerPastWeek(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewPastWeek.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
+
+        // Query all pending booking
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("BookingPending")
                 .whereEqualTo("status", "Pending")
@@ -132,6 +198,10 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
+
+
+
 
         //BUTTON TEST TO REGISTRATION COMPLETE
 //        btnAccept = view.findViewById(R.id.btnAccept);
