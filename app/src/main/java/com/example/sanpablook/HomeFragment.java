@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.example.sanpablook.Adapter.RecyclerConfirmed;
 import com.example.sanpablook.Adapter.RecyclerPastWeek;
 import com.example.sanpablook.Adapter.RecyclerPending;
 import com.example.sanpablook_establishment.R;
@@ -41,6 +42,7 @@ public class HomeFragment extends Fragment {
     Button btnAccept;
     RecyclerView recyclerViewConfirmed, recyclerViewNextWeek, recyclerViewPastWeek, recyclerViewPending;
 
+    String todayDate, oneWeekAgoDate, oneWeekAheadDate;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,7 @@ public class HomeFragment extends Fragment {
         oneWeekAgo.add(Calendar.WEEK_OF_YEAR, -1);
         Calendar oneWeekAhead = Calendar.getInstance();
         oneWeekAhead.add(Calendar.WEEK_OF_YEAR, 1);
+
 
         //sdf
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd yyyy", Locale.getDefault());
@@ -123,6 +126,30 @@ public class HomeFragment extends Fragment {
                         });
             }
         });
+
+        //Query Confirmed
+        db.collection("BookingPending")
+                .whereEqualTo("status", "Confirmed")
+                .whereEqualTo("establishmentID", "casaDine")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Log the size of the bookings list
+                        Log.d("HomeFragment", "Number of documents fetched for Confirmed: " + bookings.size());
+
+                        // Initialize the adapter
+                        RecyclerConfirmed adapter = new RecyclerConfirmed(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewConfirmed.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
 
         //Query Date base on next week
         db.collection("BookingPending")
@@ -220,6 +247,105 @@ public class HomeFragment extends Fragment {
 //        });
 
         return view;
+    }
+
+    public void refreshData() {
+        // Query all pending booking
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("BookingPending")
+                .whereEqualTo("status", "Pending")
+                .whereEqualTo("establishmentID", "casaDine")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Initialize the adapter
+                        RecyclerPending adapter = new RecyclerPending(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewPending.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
+        //Query Confirmed
+        db.collection("BookingPending")
+                .whereEqualTo("status", "Confirmed")
+                .whereEqualTo("establishmentID", "casaDine")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Log the size of the bookings list
+                        Log.d("HomeFragment", "Number of documents fetched for Confirmed: " + bookings.size());
+
+                        // Initialize the adapter
+                        RecyclerConfirmed adapter = new RecyclerConfirmed(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewConfirmed.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
+
+        //Query Date base on next week
+        db.collection("BookingPending")
+                .whereEqualTo("establishmentID", "casaDine")
+                .whereGreaterThanOrEqualTo("date", todayDate)
+                .whereLessThanOrEqualTo("date", oneWeekAheadDate)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Log the size of the bookings list
+                        Log.d("HomeFragment", "Number of documents fetched for oneWeekAhead: " + bookings.size());
+
+                        // Initialize the adapter
+                        RecyclerPastWeek adapter = new RecyclerPastWeek(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewNextWeek.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
+
+        // Query Date base on last week
+        db.collection("BookingPending")
+                .whereEqualTo("establishmentID", "casaDine")
+                .whereLessThanOrEqualTo("date", todayDate)
+                .whereGreaterThanOrEqualTo("date", oneWeekAgoDate)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<Map<String, Object>> bookings = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            bookings.add(document.getData());
+                        }
+                        // Log the size of the bookings list
+                        Log.d("HomeFragment", "Number of documents fetched for oneWeekAgo: " + bookings.size());
+
+                        // Initialize the adapter
+                        RecyclerPastWeek adapter = new RecyclerPastWeek(bookings);
+
+                        // Set the adapter to the RecyclerView
+                        recyclerViewPastWeek.setAdapter(adapter);
+                    } else {
+                        Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                    }
+                });
+
+
     }
 
     public void setDate(int day, int month, int year){
