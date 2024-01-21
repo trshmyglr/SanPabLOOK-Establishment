@@ -52,6 +52,8 @@ dependencies {
     implementation ("com.firebaseui:firebase-ui-storage:7.2.0")
     implementation("com.google.firebase:firebase-auth:22.3.0")
     implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation ("com.github.sundeepk:compact-calendar-view:3.0.0")
+
 
     //for line graph on reports
     implementation ("com.jjoe64:graphview:4.2.2")

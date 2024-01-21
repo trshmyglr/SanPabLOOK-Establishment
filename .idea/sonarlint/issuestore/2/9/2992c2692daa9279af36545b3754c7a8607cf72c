@@ -1,0 +1,6 @@
+
+e
+java:S1192#"JDefine a constant instead of duplicating this literal "bookingID" 5 times.(ÿã¹ÿýÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(â½ÅÝûÿÿÿÿ
+g
+java:S16591"QDeclare "valueOfBookingNumber" and all following declarations on a separate line.(Å¾ÛË

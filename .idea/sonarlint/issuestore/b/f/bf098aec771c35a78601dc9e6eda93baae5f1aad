@@ -1,9 +1,14 @@
 
-C
-java:S1604)"(Make this anonymous inner class a lambda(Á¤Ïşÿÿÿÿ
->
-java:S1185"(Remove this method to simply inherit it.(ßìê¯
-Q	java:S125,"<This block of commented-out lines of code should be removed.(”¢÷á
-A
-java:S1172:"+Remove this unused method parameter "view".(Ô¢Ÿî
-Q	java:S125;"<This block of commented-out lines of code should be removed.(»ß¨
+i
+java:S1192R"MDefine a constant instead of duplicating this literal "HomeFragment" 3 times.(˜Ã’d8×»ÍÜÒ1
+J
+java:S1604["(Make this anonymous inner class a lambda(¯‘àçúÿÿÿÿ8ÜÌËÜÒ1
+J
+java:S1604D"(Make this anonymous inner class a lambda(Á¤Ïşÿÿÿÿ8ÒöèÜÒ1
+J
+java:S1604u"(Make this anonymous inner class a lambda(¯‘àçúÿÿÿÿ8ÒöèÜÒ1
+m
+java:S1659)"QDeclare "recyclerViewNextWeek" and all following declarations on a separate line.(Ã„ÏE8ä•ËÜÒ1
+E
+java:S1185,"(Remove this method to simply inherit it.(ßìê¯8ì•ËÜÒ1
+^	java:S125‰"<This block of commented-out lines of code should be removed.(Æ¶Şıÿÿÿÿ8´ÍËÜÒ1
