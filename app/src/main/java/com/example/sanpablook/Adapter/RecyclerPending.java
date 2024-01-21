@@ -1,7 +1,5 @@
 package com.example.sanpablook.Adapter;
 
-import static java.security.AccessController.getContext;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,12 +52,6 @@ public class RecyclerPending extends RecyclerView.Adapter<RecyclerPending.Bookin
         void onBookingSelected(long dateInMillis);
     }
 
-    private OnBookingSelectedListener listener;
-
-    public void setOnBookingSelectedListener(OnBookingSelectedListener listener) {
-        this.listener = listener;
-    }
-
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
         Map<String, Object> booking = bookings.get(position);
@@ -76,7 +68,7 @@ public class RecyclerPending extends RecyclerView.Adapter<RecyclerPending.Bookin
 
     static class BookingViewHolder extends RecyclerView.ViewHolder {
 
-        Button btnAccept;
+        Button btnAccept, btnDecline;
         TextView txtPendingBooking, txtPendingCustomerName, txtPendingDate;
         List<Map<String, Object>> bookings;
 
@@ -96,7 +88,6 @@ public class RecyclerPending extends RecyclerView.Adapter<RecyclerPending.Bookin
                 public void onClick(View view) {
                         acceptBooking(view);
                 }
-
                 private void acceptBooking(View view) {
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
@@ -137,6 +128,41 @@ public class RecyclerPending extends RecyclerView.Adapter<RecyclerPending.Bookin
                     }
                 }
             });
+
+            // Decline booking btn
+            btnDecline = itemView.findViewById(R.id.btnDecline);
+            btnDecline.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    declineBooking(view);
+                }
+
+                private void declineBooking(View view) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        Map<String, Object> clickedBooking = bookings.get(position);
+                        String bookingID = clickedBooking.get("bookingID").toString();
+
+                        DocumentReference bookingRef = db.collection("BookingPending").document(bookingID);
+                        bookingRef.update("status", "Cancelled")
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(view.getContext(), "Booking cancelled", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(view.getContext(), "Error updating document", Toast.LENGTH_SHORT).show();
+                                        Log.w("RecyclerPending", "Error updating document", e);
+                                    }
+                                });
+                    }
+                }
+            });
+
+
         }
     }
 }

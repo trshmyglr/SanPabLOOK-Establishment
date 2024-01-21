@@ -32,8 +32,8 @@ public class RecyclerConfirmed extends RecyclerView.Adapter<RecyclerConfirmed.Bo
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
         Map<String, Object> booking = bookings.get(position);
-        holder.txtBookingNumber.setText(booking.get("place").toString());
-        holder.txtCustomerName.setText(booking.get("bookingID").toString());
+        holder.txtBookingNumber.setText(booking.get("bookingID").toString());
+        holder.txtCustomerName.setText(booking.get("fullName").toString());
     }
 
     @Override

@@ -60,7 +60,7 @@ public class ReportsFragment extends Fragment {
         // Query Firestore
         db.collection("BookingPending")
                 .whereEqualTo("establishmentID", "casaDine")
-                .whereEqualTo("status", "pending")
+                .whereEqualTo("status", "Pending")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -79,7 +79,7 @@ public class ReportsFragment extends Fragment {
         // Query Firestore
         db.collection("BookingPending")
                 .whereEqualTo("establishmentID", "casaDine")
-                .whereEqualTo("status", "cancelled")
+                .whereEqualTo("status", "Cancelled")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

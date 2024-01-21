@@ -33,9 +33,7 @@ public class BottomNavBarActivity extends AppCompatActivity {
             } else if (itemId == R.id.profile) {
                 replaceFragment(new ProfileFragment());
             }
-
             return true;
-
         });
     }
 

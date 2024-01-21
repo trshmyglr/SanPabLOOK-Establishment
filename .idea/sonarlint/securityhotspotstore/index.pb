@@ -31,3 +31,5 @@ n
 >app/src/main/java/com/example/sanpablook/BookingsFragment.java,6\a\6a0e36b716cde123d710a91de24d0cd6eb3f573f
 m
 =app/src/main/java/com/example/sanpablook/ReportsFragment.java,0\1\01cba41370aa6832821d5b73c42a48234c8ea226
+r
+Bapp/src/main/java/com/example/sanpablook/BottomNavBarActivity.java,2\c\2c0f080db27e3599d89dc8b8e3a41d00aba5c68c
