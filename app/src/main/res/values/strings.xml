@@ -24,7 +24,7 @@
     <string name="valueTotalBookings">15</string>
     <string name="valuePendingBookings">1</string>
     <string name="valueCancelledBookings">0</string>
-    <string name="valueMostChosenPlan">4 days. 3 nights.</string>
+    <string name="valueConfirmedBookings">4</string>
     <!--Report page labels-->
     <string name="labelAsOf">as of</string>
     <string name="labelRevenue">Revenue</string>
@@ -32,6 +32,7 @@
     <string name="labelPendingBookings">Pending Bookings</string>
     <string name="labelCancelledBookings">Cancelled Bookings</string>
     <string name="labelMostChosenPlan">Most Chosen Plan</string>
+    <string name="labelConfirmedBookings">Confirmed Bookings</string>
 
     <!--Settings page labels-->
     <string name="descriptionArrowBack">Back</string>

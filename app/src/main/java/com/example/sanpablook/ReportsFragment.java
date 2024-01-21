@@ -12,16 +12,12 @@ import android.widget.Toast;
 
 import com.example.sanpablook_establishment.R;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class ReportsFragment extends Fragment {
 
-    GraphView graphView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     TextView valueTotalBookings, valuePendingBookings, valueCancelledBookings, valueConfirmedBookings;
 
