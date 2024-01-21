@@ -15,50 +15,109 @@
         android:paddingEnd="15dp"
         android:paddingBottom="70dp">
 
-        <TextView
-            android:id="@+id/textLabelReports"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham_black"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:text="@string/bookings"
-            android:textColor="@color/blueText"
-            android:textSize="26sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearAsOfDate"
+        <RelativeLayout
+            android:id="@+id/relativeBookingsSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textLabelReports">
+            app:layout_constraintRight_toRightOf="parent">
 
             <TextView
-                android:id="@+id/textLabelAsOf"
+                android:id="@+id/textLabelBookings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:letterSpacing="0.05"
+                android:fontFamily="@font/gotham_black"
                 android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:text="@string/labelAsOf"
-                android:textColor="@color/darkGray"
-                android:textSize="12sp" />
+                android:paddingEnd="30dp"
+                android:text="@string/bookings"
+                android:textColor="@color/blueText"
+                android:textSize="26sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textReportDate"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearMonth"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:letterSpacing="0.05"
-                android:text="@string/bookingDateMonthly"
-                android:textColor="@color/darkGray"
-                android:textSize="12sp" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:layout_toRightOf="@id/textLabelBookings">
+
+                <TextView
+                    android:id="@+id/textLabelMonth"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:letterSpacing="0.05"
+                    android:text="@string/labelMonth"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/monthSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearAsOfDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:layout_below="@id/textLabelBookings">
+
+                <TextView
+                    android:id="@+id/textLabelAsOf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:letterSpacing="0.05"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/labelAsOf"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textReportDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:letterSpacing="0.05"
+                    android:text="@string/bookingDateMonthly"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:layout_below="@id/linearMonth"
+                android:layout_toRightOf="@id/textLabelBookings">
+
+                <TextView
+                    android:id="@+id/textLabelYear"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:letterSpacing="0.05"
+                    android:text="@string/labelYear"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/yearSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
 
         <!--BOOKINGS-->
         <LinearLayout
@@ -66,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/linearAsOfDate">
+            app:layout_constraintTop_toBottomOf="@id/relativeBookingsSpinner">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewFragmentBookings"

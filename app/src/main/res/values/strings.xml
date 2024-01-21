@@ -83,6 +83,23 @@
     <string name="pendingBookingTime">2:00 PM</string>
     <string name="pendingNumberOfGuests">5</string>
     <string name="pendingNumberOfPets">2</string>
+    <!--SPINNER-->
+    <string name="labelMonth">Month:</string>
+    <string name="labelYear">Year:</string>
+    <string-array name="monthArray">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 
     <!--HOME/DASHBOARD -->
     <string name="overview">Overview</string>
