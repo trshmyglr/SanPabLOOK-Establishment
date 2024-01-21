@@ -44,9 +44,9 @@ java:S1604†"(Make this anonymous inner class a lambda(¶àË²úÿÿÿÿ
 >
 java:S1604"(Make this anonymous inner class a lambda(µ¶é)
 ^
-java:S2259™"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
-^
 java:S2259“"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
+^
+java:S2259™"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
 ^
 java:S2259–"BA "NullPointerException" could be thrown; "data" is nullable here.(Íƒ“Íüÿÿÿÿ
 c

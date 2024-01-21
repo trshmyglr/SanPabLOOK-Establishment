@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,20 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.example.sanpablook.Adapter.RecyclerPending;
 import com.example.sanpablook_establishment.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 
 public class HomeFragment extends Fragment {
@@ -42,6 +54,7 @@ public class HomeFragment extends Fragment {
         calendarView = view.findViewById(R.id.calendarDashboard);
         calendar = Calendar.getInstance();
         calendar.getMinimalDaysInFirstWeek();
+
         //RECYCLER VIEW
         recyclerViewConfirmed = view.findViewById(R.id.recyclerViewConfirmed);
         recyclerViewConfirmed.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -55,9 +68,70 @@ public class HomeFragment extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-            //Toast.makeText(HomeFragment.this, "hello", Toast.LENGTH_SHORT).show();
+                // Create a Calendar object with the selected date
+                Calendar selectedCalendar = Calendar.getInstance();
+                selectedCalendar.set(year, month, day);
+
+                // SimpleDateForm
+                SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd yyyy", Locale.getDefault());
+
+                // Converts selected date to string
+                String selectedDate = sdf.format(selectedCalendar.getTime());
+
+                // Log the selected date
+                Log.d("HomeFragment", "Selected date: " + selectedDate);
+
+                // Fetch the bookings from the database where the date equals the selected date
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                db.collection("BookingPending")
+                        .whereEqualTo("status", "Pending")
+                        .whereEqualTo("establishmentID", "casaDine")
+                        .whereEqualTo("date", selectedDate)
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    List<Map<String, Object>> bookings = new ArrayList<>();
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        bookings.add(document.getData());
+                                    }
+                                    // Initialize the adapter
+                                    RecyclerPending adapter = new RecyclerPending(bookings);
+
+                                    // Set the adapter to the RecyclerView
+                                    recyclerViewPending.setAdapter(adapter);
+                                } else {
+                                    Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                                }
+                            }
+                        });
             }
         });
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("BookingPending")
+                .whereEqualTo("status", "Pending")
+                .whereEqualTo("establishmentID", "casaDine")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<Map<String, Object>> bookings = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                bookings.add(document.getData());
+                            }
+                            // Initialize the adapter
+                            RecyclerPending adapter = new RecyclerPending(bookings);
+
+                            // Set the adapter to the RecyclerView
+                            recyclerViewPending.setAdapter(adapter);
+                        } else {
+                            Log.d("HomeFragment", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
 
         //BUTTON TEST TO REGISTRATION COMPLETE
 //        btnAccept = view.findViewById(R.id.btnAccept);
