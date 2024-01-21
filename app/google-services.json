@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "121974656262",
+    "project_id": "sanpablook-project",
+    "storage_bucket": "sanpablook-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121974656262:android:df9b1513a34ea1d9b42287",
+        "android_client_info": {
+          "package_name": "sanpablook.study.sanpablook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0YXxXGl7IT7AckP9poRuT9Ka2uDKOnUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

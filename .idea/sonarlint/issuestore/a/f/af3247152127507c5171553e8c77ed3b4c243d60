@@ -1,0 +1,13 @@
+
+t
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(ù½Çúùÿÿÿÿ
+C
+java:S1604""(Make this anonymous inner class a lambda(Œ¢ ıÿÿÿÿ
+C
+java:S1604-"(Make this anonymous inner class a lambda(ø°šƒıÿÿÿÿ
+>
+java:S1604:"(Make this anonymous inner class a lambda(óÙ­
+P
+java:S1874%"5Remove this use of "onBackPressed"; it is deprecated.(ùÃ¦Õøÿÿÿÿ
+N
+java:S1117="8Rename "item" which hides the field declared at line 23.( ı…

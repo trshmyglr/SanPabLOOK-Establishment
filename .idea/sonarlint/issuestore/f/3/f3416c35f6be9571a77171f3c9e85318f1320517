@@ -1,0 +1,13 @@
+
+]
+java:S1854"@Remove this useless assignment to local variable "sendEmailBtn".(éìÊô8¤¼Ö°Ò1
+[
+java:S1854">Remove this useless assignment to local variable "emailField".(‰ØùÓ8¤¼Ö°Ò1
+[
+java:S1117">Rename "emailField" which hides the field declared at line 16.(‰ØùÓ8­¼Ö°Ò1
+L
+java:S1481"/Remove this unused "emailField" local variable.(‰ØùÓ8±¼Ö°Ò1
+]
+java:S1117"@Rename "sendEmailBtn" which hides the field declared at line 14.(éìÊô8±¼Ö°Ò1
+N
+java:S1481"1Remove this unused "sendEmailBtn" local variable.(éìÊô8±¼Ö°Ò1
