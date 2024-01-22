@@ -34,6 +34,11 @@
     <string name="labelMostChosenPlan">Most Chosen Plan</string>
     <string name="labelConfirmedBookings">Confirmed Bookings</string>
 
+    <!--Dialog decline/confirm-->
+    <string name="confirmBooking">Are you sure you want to confirm this booking?</string>
+    <string name="declineBooking">Are you sure you want to decline this booking?</string>
+    <string name="labelBack">Back</string>
+
     <!--Settings page labels-->
     <string name="descriptionArrowBack">Back</string>
     <string name="labelLogout">Logout</string>

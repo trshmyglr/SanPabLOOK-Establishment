@@ -190,7 +190,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Establishment name has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Establishment name has been updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -242,7 +242,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Host name has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Host name has been updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -283,7 +283,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Your password has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your password has been updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -356,7 +356,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Your bio has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your bio has been updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -412,7 +412,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Your phone number has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your phone number has been updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -463,7 +463,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Your email has been updated", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your email has been updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -518,7 +518,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProfileSettingsActivity.this, "Your account has been deleted", Toast.LENGTH_SHORT);
+                Toast.makeText(ProfileSettingsActivity.this, "Your account has been deleted", Toast.LENGTH_SHORT).show();
             }
         });
 

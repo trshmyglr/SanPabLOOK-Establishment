@@ -10,9 +10,9 @@
         android:id="@+id/constraintAll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="25dp"
+        android:paddingTop="20dp"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp"
+        android:paddingEnd="5dp"
         android:paddingBottom="10dp">
 
         <RelativeLayout
@@ -124,6 +124,7 @@
             android:id="@+id/linearAllBookings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/relativeBookingsSpinner">
 

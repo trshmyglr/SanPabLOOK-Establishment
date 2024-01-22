@@ -1,16 +1,25 @@
 package com.example.sanpablook.Adapter;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sanpablook.ProfileSettingsActivity;
 import com.example.sanpablook_establishment.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -86,8 +95,40 @@ public class RecyclerPending extends RecyclerView.Adapter<RecyclerPending.Bookin
             btnAccept.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                        acceptBooking(view);
+                    showDialogConfirm(view);
                 }
+
+                //dialog for confirm
+                private void showDialogConfirm(View view) {
+                    final Dialog dialog = new Dialog(itemView.getContext());
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.dialog_confirm);
+
+                    Button buttonConfirm = dialog.findViewById(R.id.buttonConfirm);
+                    Button buttonCancel = dialog.findViewById(R.id.buttonCancel);
+
+                    buttonConfirm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(view.getContext(), "You confirmed this booking", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    buttonCancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                    dialog.getWindow().setGravity(Gravity.BOTTOM);
+                }
+
+                //accept booking
                 private void acceptBooking(View view) {
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
@@ -134,7 +175,37 @@ public class RecyclerPending extends RecyclerView.Adapter<RecyclerPending.Bookin
             btnDecline.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    declineBooking(view);
+                    showDialogDecline(view);
+                }
+
+                //dialog for decline
+                private void showDialogDecline(View view) {
+                    final Dialog dialog = new Dialog(itemView.getContext());
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.dialog_decline);
+
+                    Button buttonDecline = dialog.findViewById(R.id.buttonDecline);
+                    Button buttonCancel = dialog.findViewById(R.id.buttonCancel);
+
+                    buttonDecline.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(view.getContext(), "You declined this booking", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    buttonCancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                    dialog.getWindow().setGravity(Gravity.BOTTOM);
                 }
 
                 private void declineBooking(View view) {
